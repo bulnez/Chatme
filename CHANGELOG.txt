@@ -1,5 +1,8 @@
 
 # CHANGELOG
 
+## version 0.0.2 -> #2
+[add] Create authentication with Google firebase
+
 ## version 0.0.1 -> #1 
 [add] add firebase and react navigation
