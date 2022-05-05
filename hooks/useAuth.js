@@ -14,6 +14,7 @@ import {
 } from "firebase/auth";
 import * as Google from "expo-google-app-auth";
 import { auth } from "../firebase";
+import { useNavigation } from "@react-navigation/native";
 
 const AuthContext = createContext({}); //initial state
 
@@ -29,6 +30,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loadingInitial, setLoadingInitial] = useState(true);
   const [loading, setLoading] = useState(false);
+  const navigation = useNavigation();
 
   useEffect(
     () =>
@@ -48,7 +50,10 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     signOut(auth)
       .catch((error) => setError(error))
-      .finally(() => setLoading(false));
+      .finally(() => {
+        setLoading(false);
+        navigation.navigate("Login");
+      });
   };
 
   const signInWithGoogle = async () => {

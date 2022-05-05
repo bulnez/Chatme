@@ -1,5 +1,7 @@
-
 # CHANGELOG
+
+## version 0.0.3 -> #12
+[add] Create logout functionality
 
 ## version 0.0.2 -> #2
 [add] Create authentication with Google firebase
